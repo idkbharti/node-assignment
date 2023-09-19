@@ -6,8 +6,8 @@ const connectToDb = require('./utils/connect')
 const PORT = process.env.PORT || 3333
 
 const app = express()
-
-connectToDb("mongodb+srv://idkbharti:oClfa10OJns7U9HX@nifty.zvk1hom.mongodb.net/?retryWrites=true&w=majority")
+require('dotenv').config()
+connectToDb(process.env.MURI)
 
 app.use(bodyParser.json())
 app.use("/api",booksRouter)
