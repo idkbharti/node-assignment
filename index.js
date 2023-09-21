@@ -1,12 +1,12 @@
 const express = require('express')
 const bodyParser = require("body-parser")
+require('dotenv').config()
 const booksRouter = require("./routes/books")
 const connectToDb = require('./utils/connect')
 
 const PORT = process.env.PORT || 3333
 
 const app = express()
-require('dotenv').config()
 connectToDb(process.env.MURI)
 
 app.use(bodyParser.json())
